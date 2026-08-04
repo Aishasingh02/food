@@ -22,6 +22,9 @@ app.get('/', (req, res) => {
 app.use(express.json());
 
 app.use('/api',require("./Routes/CreateUser"));
+app.use('/api',require("./Routes/DisplayData"));
+app.use("/api", require("./routes/OrderData"));
+app.use("/api", require("./routes/MyOrderData"));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)

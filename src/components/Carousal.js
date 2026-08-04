@@ -4,40 +4,47 @@ export default function Carousal() {
   return (
     <div
       id="carouselExampleFade"
-      className="carousel slide carousel-fade carousel-dark"
+      className="carousel slide carousel-fade"
       data-bs-ride="carousel"
-      style={{ objectFit: "contain" }}
     >
 
-      <div className="carousel-inner" id="carousel">
+      <div className="carousel-inner">
 
+        {/* SEARCH BAR */}
         <div className="carousel-caption" style={{ zIndex: "10" }}>
-          <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+          <form className="d-flex justify-content-center">
+            <input
+              className="form-control me-2 w-50"
+              type="search"
+              placeholder="Search food..."
+            />
+            <button className="btn btn-success">Search</button>
           </form>
         </div>
 
+        {/* IMAGE 1 */}
         <div className="carousel-item active">
           <img
-            src="https://source.unsplash.com/1600x900/?burger"
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
             className="d-block w-100"
-            style={{ height: "500px", objectFit: "cover" }}
+            style={{ height: "500px", objectFit: "cover", filter: "brightness(40%)" }}
             alt="burger"
           />
         </div>
 
+        {/* IMAGE 2 */}
         <div className="carousel-item">
           <img
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
             className="d-block w-100"
-            style={{ height: "500px", objectFit: "cover" }}
-            alt="food"
+            style={{ height: "500px", objectFit: "cover", filter: "brightness(40%)" }}
+            alt="pizza"
           />
         </div>
 
       </div>
 
+      {/* PREVIOUS BUTTON */}
       <button
         className="carousel-control-prev"
         type="button"
@@ -47,6 +54,7 @@ export default function Carousal() {
         <span className="carousel-control-prev-icon"></span>
       </button>
 
+      {/* NEXT BUTTON */}
       <button
         className="carousel-control-next"
         type="button"
