@@ -24,8 +24,8 @@ export default function Navbar() {
 
         <div className="container-fluid">
 
-          <Link 
-            className="navbar-brand fs-1 fst-italic" 
+          <Link
+            className="navbar-brand fs-1 fst-italic"
             to="/"
           >
             GoFoodtest
@@ -48,8 +48,8 @@ export default function Navbar() {
 
 
 
-          <div 
-            className="collapse navbar-collapse" 
+          <div
+            className="collapse navbar-collapse"
             id="navbarNav"
           >
 
@@ -72,21 +72,26 @@ export default function Navbar() {
 
               {
                 localStorage.getItem("authToken") ?
-
-                <li className="nav-item">
-
-                  <Link
-                    className="nav-link active fs-5"
-                    to="/myOrder"
-                  >
-                    My Orders
-                  </Link>
-
-                </li>
-
-                :
-
-                ""
+                  <>
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link active fs-5"
+                        to="/myOrder"
+                      >
+                        My Orders
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link active fs-5"
+                        to="/favorites"
+                      >
+                        My Favourites
+                      </Link>
+                    </li>
+                  </>
+                  :
+                  ""
               }
 
 
@@ -97,63 +102,63 @@ export default function Navbar() {
 
             {
 
-            !localStorage.getItem("authToken") ?
+              !localStorage.getItem("authToken") ?
 
-            <div className="d-flex">
-
-
-              <Link
-                className="btn bg-white text-success mx-1"
-                to="/login"
-              >
-                Login
-              </Link>
+                <div className="d-flex">
 
 
-              <Link
-                className="btn bg-white text-success mx-1"
-                to="/createuser"
-              >
-                Sign Up
-              </Link>
+                  <Link
+                    className="btn bg-white text-success mx-1"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
 
 
-            </div>
+                  <Link
+                    className="btn bg-white text-success mx-1"
+                    to="/createuser"
+                  >
+                    Sign Up
+                  </Link>
 
 
-            :
+                </div>
 
 
-            <div className="d-flex">
+                :
 
 
-              <button
-                className="btn bg-white text-success mx-2"
-                onClick={() => setCartView(true)}
-              >
-
-                My Cart 🛒
-
-                <span className="badge bg-danger ms-1">
-                  {data.length}
-                </span>
+                <div className="d-flex">
 
 
-              </button>
+                  <button
+                    className="btn bg-white text-success mx-2"
+                    onClick={() => setCartView(true)}
+                  >
+
+                    My Cart 🛒
+
+                    <span className="badge bg-danger ms-1">
+                      {data.length}
+                    </span>
+
+
+                  </button>
 
 
 
-              <button
-                className="btn bg-white text-danger mx-2"
-                onClick={handleLogout}
-              >
+                  <button
+                    className="btn bg-white text-danger mx-2"
+                    onClick={handleLogout}
+                  >
 
-                Logout
+                    Logout
 
-              </button>
+                  </button>
 
 
-            </div>
+                </div>
 
             }
 
@@ -170,15 +175,15 @@ export default function Navbar() {
       {
         cartView ?
 
-        <Modal onClose={() => setCartView(false)}>
+          <Modal onClose={() => setCartView(false)}>
 
-          <Cart />
+            <Cart />
 
-        </Modal>
+          </Modal>
 
-        :
+          :
 
-        null
+          null
       }
 
 

@@ -5,6 +5,7 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import MyOrder from "./screens/MyOrder";
 import PrivateRoute from "./components/PrivateRoute";
+import Favorites from "./screens/Favourites";
 
 import {
   BrowserRouter as Router,
@@ -25,8 +26,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/createuser" element={<Signup />} />
-          <Route path="/myOrder"element={<PrivateRoute> <MyOrder /></PrivateRoute>}/>
-          
+          <Route path="/myOrder" element={<PrivateRoute><MyOrder /></PrivateRoute>} />
+          <Route path="/favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
         </Routes>
       </div>
     </Router>
